@@ -1,24 +1,20 @@
-# slurm-cluster
-Docker local slurm cluster
+Antes de ejecutar el docker compose se deben crear las imágenes en local, cada componente del cluster tiene su respectivo Dockerfile.
 
-Created by: Rodrigo Ancavil del Pino
+Para crear la imagen de Jupyter ejecutar:
+     $ cd jupyter/
+     $ docker build -t jupyter:vlocal .
 
-https://medium.com/analytics-vidhya/slurm-cluster-with-docker-9f242deee601
+Para crear la imagen del Master ejecutar:
+     $ cd master/
+     $ docker build -t master:vlocal .
 
-To run slurm cluster environment you must execute:
+Para crear la imagen del Node ejecutar:
+     $ cd master/
+     $ docker build -t node:vlocal .
 
-     $ docker-compose -f docker-compose-jupyter.yml up -d
+Una vez creadas las imágenes se puede ejecutar el docker compose.
 
-To stop it, you must:
+Para ejecutar el docker compose:
 
-     $ docker-compose -f docker-compose-jupyter.yml stop
+     $ docker-compose up -d
 
-To check logs:
-
-     $ docker-compose -f docker-compose-jupyter.yml logs -f
-
-     (stop logs with CTRL-c")
-
-To check running containers:
-
-     $ docker-compose -f docker-compose-jupyter.yml ps
