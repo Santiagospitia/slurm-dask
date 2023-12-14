@@ -1,5 +1,6 @@
 services:
   slurmjupyter:
+        build: jupyter
         image: jupyter:vlocal
         hostname: slurmjupyter
         user: admin
@@ -8,6 +9,7 @@ services:
         ports:
                 - 8888:8888
   slurmmaster:
+        build: master
         image: master:vlocal
         hostname: slurmmaster
         user: admin
@@ -18,6 +20,7 @@ services:
                 - 6818:6818
                 - 6819:6819
   slurmnode1:
+        build: node
         image: node:vlocal
         hostname: slurmnode1
         user: admin
@@ -28,6 +31,7 @@ services:
         links:
                 - slurmmaster
   slurmnode2:
+        build: node
         image: node:vlocal
         hostname: slurmnode2
         user: admin
@@ -38,6 +42,7 @@ services:
         links:
                 - slurmmaster
   slurmnode3:
+        build: node
         image: node:vlocal
         hostname: slurmnode3
         user: admin
