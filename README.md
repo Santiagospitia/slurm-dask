@@ -1,26 +1,14 @@
-Antes de ejecutar el docker compose se deben crear las imágenes en local, cada componente del cluster tiene su respectivo Dockerfile.
+#  Slurm + Dask
 
-Para crear la imagen de Jupyter ejecutar:
+Este repositorio permite __describe aquí que permite hacer el repositorio__
 
-     $ cd jupyter/
-     
-     $ docker build -t jupyter:vlocal .
+## Interactuando con el entorno
 
-Para crear la imagen del Master ejecutar:
+__Aquí describir el tipo de ejecuciones o tareas que se pueden llevar a cabo con el entorno__
 
-     $ cd master/
-     
-     $ docker build -t master:vlocal .
+---
 
-Para crear la imagen del Node ejecutar:
-
-     $ cd master/
-     
-     $ docker build -t node:vlocal .
-
-Una vez creadas las imágenes se puede ejecutar el docker compose.
-
-Para ejecutar el docker compose:
+Para ejecutar el entorno correr el comando
 
      $ docker-compose up -d
 
